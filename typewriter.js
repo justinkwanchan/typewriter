@@ -5,11 +5,7 @@ const sentence = "hello there from lighthouse labs";
 const delayLetter = phrase => {
   setTimeout(() => {
     process.stdout.write(phrase[0]);
-    if (phrase.length > 1) {
-      delayLetter(phrase.slice(1));
-    } else {
-      console.log();
-    }
+    phrase.length > 1 ? delayLetter(phrase.slice(1)) : console.log();
     return;
   }, 50);
 };
